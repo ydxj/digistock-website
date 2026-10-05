@@ -1,0 +1,388 @@
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------------------
+ * DigiStock — design tokens
+ * Bleu dérivé de l'application (bleu primaire des boutons) et du logo.
+ * ------------------------------------------------------------------------- */
+@theme {
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --color-ink-950: #071126;
+  --color-ink-900: #0b1220;
+  --color-ink-800: #1a2333;
+  --color-ink-700: #2d3647;
+  --color-ink-600: #475163;
+  --color-ink-500: #5b6475;
+  --color-ink-400: #8a92a1;
+  --color-ink-300: #b6bdc9;
+  --color-ink-200: #d9dee6;
+  --color-ink-150: #e4e8ee;
+  --color-ink-100: #eef1f5;
+  --color-ink-50: #f6f8fa;
+
+  --color-brand-50: #eef4ff;
+  --color-brand-100: #dce8fe;
+  --color-brand-200: #bfd4fd;
+  --color-brand-300: #93b6fb;
+  --color-brand-400: #5f8ff7;
+  --color-brand-500: #3b76f2;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4fd7;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #172b6b;
+
+  --color-navy-950: #050c1c;
+  --color-navy-900: #071126;
+  --color-navy-800: #0c1a36;
+  --color-navy-700: #142448;
+
+  --color-surface: #f7f8fa;
+  --color-surface-2: #f5f7fb;
+  --color-line: #e6e9ef;
+  --color-line-strong: #d7dce5;
+
+  --color-positive: #047857;
+  --color-negative: #c2410c;
+  --color-whatsapp: #128c4b;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 14px;
+
+  --shadow-xs: 0 1px 2px rgb(7 17 38 / 0.05);
+  --shadow-sm: 0 1px 2px rgb(7 17 38 / 0.04), 0 2px 6px -2px rgb(7 17 38 / 0.06);
+  --shadow-md: 0 1px 2px rgb(7 17 38 / 0.04), 0 8px 24px -8px rgb(7 17 38 / 0.12);
+  --shadow-lg: 0 2px 4px rgb(7 17 38 / 0.04), 0 24px 48px -16px rgb(7 17 38 / 0.18);
+  --shadow-screen: 0 1px 1px rgb(7 17 38 / 0.04), 0 12px 24px -12px rgb(7 17 38 / 0.18),
+    0 40px 80px -24px rgb(7 17 38 / 0.22);
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  color-scheme: light;
+  --header-h: 64px;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  scroll-padding-top: calc(var(--header-h) + 16px);
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink-900);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01" on, "cv11" on;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Les halos décoratifs ne doivent jamais créer de défilement horizontal.
+ * `clip` (et non `hidden`) préserve le positionnement sticky. */
+main {
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+::selection {
+  background: var(--color-brand-100);
+  color: var(--color-ink-950);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ----------------------------------------------------------------------------
+ * Layout utilities
+ * ------------------------------------------------------------------------- */
+@utility container-site {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 20px;
+  @media (width >= 640px) {
+    padding-inline: 32px;
+  }
+}
+
+@utility container-wide {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: 20px;
+  @media (width >= 640px) {
+    padding-inline: 32px;
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility text-pretty {
+  text-wrap: pretty;
+}
+
+/* Fine grid used behind the hero and in the showcase */
+@utility bg-grid {
+  background-image: linear-gradient(to right, rgb(7 17 38 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(7 17 38 / 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@utility bg-grid-dark {
+  background-image: linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ----------------------------------------------------------------------------
+ * Reveal on scroll — CSS only (scroll-driven animations).
+ * Les navigateurs sans support affichent simplement le contenu.
+ * ------------------------------------------------------------------------- */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-enter {
+    animation: fade-in-up 0.7s var(--ease-out-soft) both;
+  }
+  .animate-fade {
+    animation: fade-in 0.5s ease-out both;
+  }
+}
+
+/* Scan line in the barcode visual: the element spans the barcode height,
+ * its bottom border is the laser line. */
+@keyframes scan {
+  0%,
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  12%,
+  88% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-scan {
+    animation: scan 3.2s ease-in-out infinite;
+  }
+}
+
+/* Native <details> accordions */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  details::details-content {
+    transition:
+      height 0.25s var(--ease-out-soft),
+      content-visibility 0.25s allow-discrete;
+    height: 0;
+    overflow: clip;
+  }
+  details[open]::details-content {
+    height: auto;
+  }
+  @supports (interpolate-size: allow-keywords) {
+    :root {
+      interpolate-size: allow-keywords;
+    }
+  }
+}
+
+/* ----------------------------------------------------------------------------
+ * Prose (docs, blog, legal)
+ * ------------------------------------------------------------------------- */
+.prose {
+  color: var(--color-ink-700);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+.prose > * + * {
+  margin-top: 1.15em;
+}
+.prose h2 {
+  color: var(--color-ink-950);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  margin-top: 2.4em;
+  scroll-margin-top: calc(var(--header-h) + 24px);
+}
+.prose h3 {
+  color: var(--color-ink-950);
+  font-size: 1.1875rem;
+  line-height: 1.4;
+  font-weight: 620;
+  letter-spacing: -0.01em;
+  margin-top: 1.9em;
+  scroll-margin-top: calc(var(--header-h) + 24px);
+}
+.prose h2 + *,
+.prose h3 + * {
+  margin-top: 0.6em;
+}
+.prose strong {
+  color: var(--color-ink-900);
+  font-weight: 600;
+}
+.prose a {
+  color: var(--color-brand-700);
+  text-decoration: underline;
+  text-decoration-color: var(--color-brand-200);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.15s;
+}
+.prose a:hover {
+  text-decoration-color: var(--color-brand-600);
+}
+.prose ul,
+.prose ol {
+  padding-left: 1.25em;
+}
+.prose ul {
+  list-style: disc;
+}
+.prose ol {
+  list-style: decimal;
+}
+.prose li {
+  margin-top: 0.4em;
+  padding-left: 0.25em;
+}
+.prose li::marker {
+  color: var(--color-ink-400);
+}
+.prose ol > li::marker {
+  color: var(--color-ink-500);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.prose blockquote {
+  border-left: 2px solid var(--color-brand-500);
+  padding-left: 1em;
+  color: var(--color-ink-600);
+}
+.prose code:not(pre code) {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--color-ink-100);
+  border: 1px solid var(--color-line);
+  border-radius: 5px;
+  padding: 0.1em 0.35em;
+  color: var(--color-ink-900);
+}
+.prose kbd {
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  background: #fff;
+  border: 1px solid var(--color-line-strong);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  padding: 0.05em 0.4em;
+  color: var(--color-ink-900);
+  white-space: nowrap;
+}
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--color-line);
+  margin: 2.5em 0;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+.prose th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-ink-900);
+  border-bottom: 1px solid var(--color-line-strong);
+  padding: 0.6em 0.75em;
+}
+.prose td {
+  border-bottom: 1px solid var(--color-line);
+  padding: 0.6em 0.75em;
+  vertical-align: top;
+}
+.prose .table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+}
+.prose .table-wrap table th:first-child,
+.prose .table-wrap table td:first-child {
+  padding-left: 1em;
+}
+.prose .table-wrap tr:last-child td {
+  border-bottom: 0;
+}

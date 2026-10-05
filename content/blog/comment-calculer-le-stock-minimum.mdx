@@ -1,0 +1,92 @@
+---
+title: Comment calculer le stock minimum et éviter les ruptures
+description: La formule du stock minimum expliquée simplement, avec des exemples chiffrés, pour savoir quand recommander et éviter les ruptures de stock.
+date: 2026-10-02
+updatedAt: 2026-10-05
+category: Réapprovisionnement
+keywords: [calculer stock minimum, stock de sécurité, éviter rupture de stock, seuil de réapprovisionnement]
+related: [comment-gerer-le-stock-d-un-magasin, comment-faire-un-inventaire-de-stock]
+---
+
+Une rupture de stock coûte plus cher qu'elle n'en a l'air. Il y a la vente perdue, bien sûr, mais aussi le client qui va voir ailleurs et qui pourrait ne pas revenir. À l'inverse, commander trop tôt et trop souvent immobilise votre trésorerie dans des cartons.
+
+Le **stock minimum** (ou seuil de réapprovisionnement) permet de trouver le bon équilibre : c'est la quantité à partir de laquelle il faut passer commande.
+
+## La formule
+
+```text
+Stock minimum = ventes moyennes par jour × délai de livraison (en jours) + stock de sécurité
+```
+
+Elle repose sur une idée simple : entre le moment où vous commandez et le moment où la marchandise arrive, vous continuez à vendre. Il faut donc avoir assez de stock pour tenir pendant ce délai, plus une marge en cas d'imprévu.
+
+## Les trois éléments
+
+### 1. Les ventes moyennes par jour
+
+Prenez les ventes du produit sur une période représentative (par exemple les 30 derniers jours) et divisez par le nombre de jours d'ouverture.
+
+> 120 unités vendues en 30 jours → 4 unités par jour.
+
+Évitez les périodes exceptionnelles (promotion, rupture, Ramadan) si elles ne reflètent pas la période à venir. À l'inverse, si une période forte arrive, utilisez les ventes de la même période l'an dernier.
+
+### 2. Le délai de livraison
+
+C'est le nombre de jours entre la commande et la mise en rayon : délai du fournisseur, transport, réception. Prenez le délai **réel**, pas celui promis.
+
+> Commande le lundi, livraison le jeudi, mise en rayon le vendredi → 4 jours.
+
+### 3. Le stock de sécurité
+
+C'est la marge qui absorbe les imprévus : un pic de ventes, un retard de livraison. Une méthode simple consiste à couvrir quelques jours de ventes supplémentaires.
+
+> 4 unités par jour × 2 jours de sécurité → 8 unités.
+
+## Un exemple complet
+
+| Élément | Valeur |
+| --- | --- |
+| Ventes moyennes | 4 par jour |
+| Délai de livraison | 7 jours |
+| Stock de sécurité | 10 unités |
+| **Stock minimum** | **4 × 7 + 10 = 38 unités** |
+
+Quand le stock de ce produit descend à 38 unités, il est temps de commander. Pendant les 7 jours de livraison, vous vendrez environ 28 unités, et il vous restera une marge de 10 unités à l'arrivée de la commande.
+
+## Combien commander ?
+
+Le stock minimum dit **quand** commander. La quantité dépend de vos contraintes :
+
+- le **minimum de commande** du fournisseur ;
+- votre **trésorerie** ;
+- votre **place** en réserve ;
+- la **durée de vie** du produit (dates de péremption).
+
+Une approche courante : commander de quoi couvrir la période jusqu'à la prochaine commande prévue. Si vous commandez toutes les deux semaines un produit vendu à 4 unités par jour, commandez environ 56 unités, ajustées selon votre stock au moment de la commande.
+
+## Les erreurs à éviter
+
+**Un seuil unique pour tous les produits.** Un produit vendu 20 fois par jour et un autre vendu une fois par semaine n'ont pas besoin du même seuil.
+
+**Des seuils jamais revus.** Les ventes changent avec les saisons, les prix, la concurrence. Revoyez les seuils des produits importants au moins chaque trimestre, et avant chaque période forte.
+
+**Ignorer le délai réel.** Si votre fournisseur annonce 3 jours mais livre souvent en 6, c'est 6 qu'il faut utiliser.
+
+**Un stock de sécurité énorme « pour être tranquille ».** C'est de la trésorerie immobilisée. Ajustez-le selon la régularité des ventes et la fiabilité du fournisseur.
+
+<Callout type="info" title="Commencez par l'essentiel">
+Inutile de calculer un seuil pour chaque référence dès le premier jour. Commencez par les 20 à 30 produits qui font l'essentiel de vos ventes.
+</Callout>
+
+## Automatiser le suivi
+
+Calculer un seuil est simple. Le surveiller tous les jours pour des centaines de produits l'est beaucoup moins. Un logiciel de gestion de stock vous alerte dès qu'un produit passe sous son seuil.
+
+Dans [DigiStock](/features/gestion-stock), chaque produit a un stock minimum. Les produits en stock faible et en rupture apparaissent sur le tableau de bord. Avec Premium, la [suggestion de réapprovisionnement](/features/achats) calcule ce seuil à partir de vos ventes moyennes, du délai du fournisseur et d'un stock de sécurité, puis propose une quantité à commander, que vous pouvez ajuster. Voir aussi la documentation [stock minimum](/docs/stock-minimum).
+
+## En résumé
+
+1. Stock minimum = ventes moyennes par jour × délai de livraison + stock de sécurité.
+2. Utilisez des chiffres réels : ventes récentes, délai réellement constaté.
+3. Adaptez le seuil à chaque produit et revoyez-le régulièrement.
+4. Commencez par les produits qui comptent le plus.

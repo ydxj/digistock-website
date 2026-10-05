@@ -1,0 +1,37 @@
+---
+title: Enregistrer un achat
+description: Saisir un achat fournisseur dans DigiStock pour mettre à jour le stock et les prix d'achat.
+updatedAt: 2026-10-05
+keywords: [DigiStock achat, nouvel achat, réception marchandise, prix d'achat]
+---
+
+Un achat enregistre la marchandise reçue d'un fournisseur. Les quantités sont ajoutées au stock et les prix d'achat sont conservés pour le calcul du bénéfice.
+
+## Saisir un achat
+
+1. Ouvrez **Nouvel achat** dans le menu **Achats** (ou le bouton **Nouvel achat** du tableau de bord).
+2. Sélectionnez le fournisseur.
+3. Ajoutez les produits par recherche ou par scan.
+4. Indiquez pour chaque ligne la **quantité reçue** et le **prix d'achat unitaire**.
+5. Vérifiez le total et enregistrez.
+
+L'achat reçoit une référence, par exemple `ACH-2026-000103`. Un mouvement d'entrée est créé pour chaque produit.
+
+<Callout type="tip" title="Contrôlez la livraison">
+Saisissez les quantités réellement reçues, pas celles du bon de commande. C'est la première source d'écarts d'inventaire.
+</Callout>
+
+## Retrouver un achat
+
+Ouvrez **Achats** pour consulter l'historique, filtrer par fournisseur ou par date, et ouvrir le détail d'un achat.
+
+## Effet sur le stock et les rapports
+
+- Le **stock** augmente des quantités reçues.
+- La **valeur du stock** tient compte des prix d'achat.
+- Le **bénéfice** des ventes futures est calculé avec ces prix d'achat.
+
+## Voir aussi
+
+- [Commandes fournisseurs](/docs/commandes-fournisseurs)
+- [Mouvements de stock](/docs/mouvements-de-stock)

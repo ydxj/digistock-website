@@ -1,0 +1,47 @@
+---
+title: Mouvements de stock
+description: Comprendre l'historique des entrées et sorties de stock dans DigiStock et retrouver l'origine de chaque variation.
+updatedAt: 2026-10-05
+keywords: [DigiStock mouvements de stock, historique stock, traçabilité stock]
+---
+
+Un mouvement de stock est une ligne d'historique qui explique pourquoi la quantité d'un produit a changé. DigiStock en crée un à chaque opération qui touche le stock.
+
+## Les types de mouvements
+
+| Mouvement | Sens | Créé par |
+| --- | --- | --- |
+| Achat | Entrée | L'enregistrement d'un achat fournisseur |
+| Vente | Sortie | La validation d'une vente |
+| Ajustement | Entrée ou sortie | Une correction manuelle ou un inventaire |
+| Produits endommagés | Sortie | La déclaration d'une casse ou d'un produit invendable |
+| Transfert | Sortie puis entrée | Un déplacement entre entrepôts (Premium) |
+
+## Lire l'historique
+
+Ouvrez **Mouvements de stock** dans le menu **Stock**. Chaque ligne indique :
+
+- la **quantité** (+50, −3…) ;
+- le **type** de mouvement ;
+- la **date et l'heure** ;
+- le **document lié**, par exemple `ACH-2026-000103` pour un achat ou `V-2026-000208` pour une vente.
+
+Filtrez par produit pour reconstituer toute son histoire : vous retrouvez la dernière réception, les ventes, les casses et les corrections.
+
+## Faire un ajustement
+
+Un ajustement corrige une quantité quand elle ne correspond plus à la réalité, en dehors d'un inventaire complet. Indiquez toujours un motif clair : c'est ce qui rend l'historique utile.
+
+<Callout type="warning" title="Ne masquez pas les écarts">
+Si vous constatez un écart important, cherchez-en la cause dans l'historique avant de le corriger. Une erreur de réception ou une casse non déclarée se reproduira sinon.
+</Callout>
+
+## Déclarer des produits endommagés
+
+Un produit cassé, périmé ou invendable doit sortir du stock vendable. Déclarez-le comme endommagé : la quantité diminue et le motif reste visible.
+
+## Voir aussi
+
+- [Inventaire](/docs/inventaire)
+- [Achats](/docs/achats)
+- [Gestion de stock](/features/gestion-stock)

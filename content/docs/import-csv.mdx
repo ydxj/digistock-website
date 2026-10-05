@@ -1,0 +1,49 @@
+---
+title: Importer des produits (CSV)
+description: Préparer un fichier CSV depuis Excel et importer votre catalogue de produits dans DigiStock.
+updatedAt: 2026-10-05
+keywords: [DigiStock import CSV, importer produits Excel, import catalogue]
+---
+
+Si votre catalogue existe déjà dans un fichier Excel, inutile de tout ressaisir. DigiStock permet d'importer et d'exporter des données au format CSV.
+
+## Préparer le fichier dans Excel
+
+1. Ouvrez votre fichier dans Excel.
+2. Gardez **une ligne par produit** et **une colonne par information**.
+3. Placez les noms de colonnes sur la première ligne.
+4. Supprimez les lignes vides, les totaux et les cellules fusionnées.
+5. Enregistrez via **Fichier** › **Enregistrer sous** › **CSV UTF-8 (délimité par des virgules)**.
+
+<Callout type="warning" title="Encodage">
+Choisissez bien « CSV UTF-8 ». Sinon, les accents (é, è, à) risquent d'être mal importés.
+</Callout>
+
+## Exemple de fichier
+
+Les colonnes exactes attendues sont indiquées dans l'écran d'import de DigiStock. Un fichier typique ressemble à ceci :
+
+```csv
+nom,categorie,code_barres,prix_achat,prix_vente,quantite,stock_minimum
+PVC 50,Plomberie,6111001204581,24.00,33.00,13,5
+PVC 110,Plomberie,6111001204598,45.00,59.00,6,4
+```
+
+Utilisez le point ou la virgule pour les décimales selon ce que demande l'écran d'import, et n'ajoutez pas « DH » dans les colonnes de prix.
+
+## Importer
+
+1. Ouvrez l'écran **Produits**.
+2. Choisissez l'import CSV.
+3. Sélectionnez votre fichier et vérifiez la correspondance des colonnes.
+4. Lancez l'import et contrôlez quelques produits au hasard.
+
+## Après l'import
+
+- Vérifiez les quantités avec un [inventaire](/docs/inventaire) si votre fichier n'était pas à jour.
+- Définissez les [stocks minimum](/docs/stock-minimum) des produits importants.
+- Créez une [sauvegarde](/docs/creer-une-sauvegarde).
+
+## Exporter
+
+L'export CSV permet de récupérer vos données pour les ouvrir dans Excel, les transmettre à votre comptable ou les archiver.

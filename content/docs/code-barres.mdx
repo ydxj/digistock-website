@@ -1,0 +1,48 @@
+---
+title: Code-barres
+description: Utiliser un lecteur code-barres USB avec DigiStock, générer des codes EAN-13 ou Code128 et imprimer des étiquettes.
+updatedAt: 2026-10-05
+keywords: [DigiStock code barre, lecteur code-barres, étiquettes code-barres, EAN-13, Code128]
+---
+
+DigiStock lit et génère deux formats de code-barres : **EAN-13**, le format des produits du commerce, et **Code128**, pratique pour vos références internes car il accepte aussi les lettres.
+
+## Brancher un lecteur code-barres
+
+La plupart des lecteurs USB fonctionnent en « émulation clavier » : ils tapent le code puis appuient sur Entrée. Aucun réglage n'est nécessaire dans DigiStock.
+
+1. Branchez le lecteur sur un port USB.
+2. Ouvrez **Nouvelle vente**.
+3. Scannez un produit : il s'ajoute au panier.
+
+Pour vérifier le lecteur, ouvrez le Bloc-notes de Windows et scannez un produit : le code doit s'écrire puis passer à la ligne.
+
+## Scanner à la caisse
+
+- **Un scan** ajoute le produit au panier.
+- **Un second scan** du même produit augmente la quantité.
+- **Un multiplicateur** : tapez `3*` dans le champ de scan avant de scanner pour ajouter trois unités d'un coup.
+
+<Screenshot name="pos" caption="Le champ « Scannez un code-barres ou recherchez un produit » en haut de l'écran Nouvelle vente." />
+
+## Code inconnu
+
+Si le code scanné ne correspond à aucun produit, DigiStock propose de créer le produit avec ce code déjà renseigné. Saisissez le nom et le prix, enregistrez, et la vente continue.
+
+## Générer un code-barres
+
+Pour un article sans code fabricant (vrac, produit artisanal, article fabriqué sur place), générez un code depuis la fiche produit. Préférez le Code128 pour des références internes et l'EAN-13 si vous avez besoin d'un format numérique standard.
+
+## Imprimer des étiquettes
+
+Depuis DigiStock, préparez des étiquettes avec le nom, le prix et le code-barres du produit, puis imprimez-les. Vous pouvez imprimer plusieurs étiquettes à la fois, par exemple après la réception d'une commande.
+
+<Callout type="tip">
+Faites un test d'impression sur une seule étiquette avant de lancer une série complète, pour vérifier le format de votre imprimante.
+</Callout>
+
+## Voir aussi
+
+- [Nouvelle vente](/docs/nouvelle-vente)
+- [Inventaire](/docs/inventaire), où le scan accélère le comptage
+- [Logiciel code-barres pour magasin](/features/code-barres)
