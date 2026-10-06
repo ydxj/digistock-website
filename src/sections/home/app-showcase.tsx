@@ -83,8 +83,8 @@ export function AppShowcase() {
             <p className="inline-flex items-center gap-2 text-[0.8125rem] text-ink-300">
               {theme === "light" ? <Sun className="size-3.5" aria-hidden /> : <Moon className="size-3.5" aria-hidden />}
               {theme === "light" ? "Mode clair" : "Mode sombre"}
-              <span className="text-ink-500">·</span>
-              <span>Disponible en clair et en sombre</span>
+              <span className="hidden text-ink-500 sm:inline">·</span>
+              <span className="hidden sm:inline">Disponible en clair et en sombre</span>
             </p>
           )}
         </div>

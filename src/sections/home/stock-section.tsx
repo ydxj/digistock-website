@@ -24,7 +24,7 @@ export function StockSection() {
   return (
     <Section tone="subtle" bordered labelledBy="stock-title">
       <Container wide>
-        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+        <div className="grid grid-cols-[minmax(0,1fr)] items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <div>
             <SectionHeader
               id="stock-title"
@@ -66,7 +66,7 @@ export function StockSection() {
             </div>
             <ol className="divide-y divide-line">
               {movements.map((m) => (
-                <li key={m.ref} className="grid grid-cols-[4.25rem_1fr_auto] items-center gap-4 px-5 py-4 sm:px-6">
+                <li key={m.ref} className="grid grid-cols-[3.75rem_minmax(0,1fr)_auto] items-center gap-3 px-4 py-4 sm:grid-cols-[4.25rem_minmax(0,1fr)_auto] sm:gap-4 sm:px-6">
                   <span
                     className={`inline-flex h-7 items-center justify-center rounded-md font-mono text-[0.8125rem] font-semibold tabular ${
                       m.qty > 0 ? "bg-emerald-50 text-positive" : "bg-orange-50 text-negative"
@@ -78,7 +78,7 @@ export function StockSection() {
                     <span className="block text-[0.9375rem] font-medium text-ink-900">{m.label}</span>
                     <span className="block truncate font-mono text-[0.75rem] text-ink-500">{m.ref}</span>
                   </span>
-                  <span className="text-[0.75rem] text-ink-500 tabular">{m.time}</span>
+                  <span className="hidden text-[0.75rem] text-ink-500 tabular min-[400px]:inline">{m.time}</span>
                 </li>
               ))}
             </ol>
@@ -96,7 +96,7 @@ export function StockSection() {
 
 function ReorderBlock() {
   return (
-    <div className="mt-20 grid gap-10 rounded-2xl border border-line bg-white p-6 sm:p-10 lg:mt-28 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-center lg:gap-16">
+    <div className="mt-20 grid grid-cols-[minmax(0,1fr)] gap-10 rounded-2xl border border-line bg-white p-5 sm:p-10 lg:mt-28 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-center lg:gap-16">
       <div>
         <Eyebrow>Premium</Eyebrow>
         <h3 className="mt-4 text-[1.5rem] leading-tight font-semibold tracking-[-0.025em] text-ink-950 sm:text-[1.75rem]">
@@ -113,12 +113,12 @@ function ReorderBlock() {
       </div>
 
       <figure aria-label="Exemple de calcul du seuil de commande">
-        <div className="grid grid-cols-[1fr_auto_1fr_auto_1fr] items-stretch gap-2 sm:gap-3">
-          <Term value="4" unit="/ jour" label="Ventes moyennes" />
+        <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-stretch gap-1.5 sm:gap-3">
+          <Term value="4" unit="/ jour" label="Ventes moyennes" short="Ventes" />
           <Operator>×</Operator>
-          <Term value="7" unit="jours" label="Délai fournisseur" />
+          <Term value="7" unit="jours" label="Délai fournisseur" short="Délai" />
           <Operator>+</Operator>
-          <Term value="10" unit="pcs" label="Stock de sécurité" />
+          <Term value="10" unit="pcs" label="Stock de sécurité" short="Sécurité" />
         </div>
         <div className="mt-3 flex items-center justify-between rounded-lg bg-ink-950 px-5 py-4 text-white">
           <span className="text-[0.875rem] text-ink-300">Seuil de commande</span>
@@ -134,12 +134,15 @@ function ReorderBlock() {
   );
 }
 
-function Term({ value, unit, label }: { value: string; unit: string; label: string }) {
+function Term({ value, unit, label, short }: { value: string; unit: string; label: string; short: string }) {
   return (
-    <div className="rounded-lg border border-line bg-surface px-3 py-4 text-center sm:px-4">
+    <div className="min-w-0 rounded-lg border border-line bg-surface px-1.5 py-4 text-center sm:px-4">
       <p className="text-[1.5rem] font-semibold tracking-tight text-ink-950 tabular sm:text-[1.75rem]">{value}</p>
       <p className="text-[0.75rem] text-ink-500">{unit}</p>
-      <p className="mt-2 text-[0.75rem] leading-tight font-medium text-ink-700">{label}</p>
+      <p className="mt-2 text-[0.75rem] leading-tight font-medium text-ink-700">
+        <span className="sm:hidden">{short}</span>
+        <span className="hidden sm:inline">{label}</span>
+      </p>
     </div>
   );
 }

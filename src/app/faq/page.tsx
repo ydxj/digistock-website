@@ -32,7 +32,7 @@ export default function FAQPage() {
         title="Questions fréquentes"
         intro="Les réponses aux questions que l'on nous pose le plus souvent. Pour aller plus loin, consultez la documentation ou contactez-nous."
       />
-      <div className="container-wide grid gap-12 py-16 md:py-24 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-20">
+      <div className="container-wide grid grid-cols-[minmax(0,1fr)] gap-12 py-16 md:py-24 lg:grid-cols-[14rem_minmax(0,1fr)] lg:gap-20">
         <nav aria-label="Thèmes" className="lg:sticky lg:top-[calc(var(--header-h)+32px)] lg:self-start">
           <ul className="flex flex-wrap gap-2 lg:flex-col lg:gap-1">
             {faqGroups.map((g) => (

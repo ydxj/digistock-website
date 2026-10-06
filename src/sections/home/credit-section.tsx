@@ -23,7 +23,7 @@ export function CreditSection() {
   return (
     <Section tone="subtle" bordered labelledBy="credit-title">
       <Container wide>
-        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+        <div className="grid grid-cols-[minmax(0,1fr)] items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <div>
             <SectionHeader
               id="credit-title"
@@ -49,7 +49,7 @@ export function CreditSection() {
             <div className="flex items-center gap-4 border-b border-line p-5 sm:p-6">
               <span
                 aria-hidden
-                className="inline-flex size-11 items-center justify-center rounded-full bg-brand-50 text-[0.875rem] font-semibold text-brand-700"
+                className="hidden size-11 shrink-0 items-center justify-center rounded-full bg-brand-50 text-[0.875rem] font-semibold text-brand-700 min-[360px]:inline-flex"
               >
                 MB
               </span>

@@ -69,7 +69,7 @@ export default function FeaturesPage() {
       </div>
 
       <section aria-labelledby="essentials-title" className="bg-navy-900 py-20 text-white md:py-28">
-        <div className="container-wide grid items-center gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
+        <div className="container-wide grid grid-cols-[minmax(0,1fr)] items-center gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
           <div>
             <SectionHeader
               id="essentials-title"

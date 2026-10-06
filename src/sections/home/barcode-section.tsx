@@ -16,7 +16,7 @@ export function BarcodeSection() {
   return (
     <Section labelledBy="barcode-title">
       <Container wide>
-        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-20">
+        <div className="grid grid-cols-[minmax(0,1fr)] items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-20">
           <div className="order-2 lg:order-1">
             <div className="relative mx-auto max-w-[26rem] py-6">
               <div aria-hidden className="absolute inset-0 rounded-[28px] bg-surface-2" />

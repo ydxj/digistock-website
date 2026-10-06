@@ -50,7 +50,7 @@ export function DocsSidebar({ sections }: { sections: SidebarSection[] }) {
   return (
     <>
       {/* Mobile / tablette */}
-      <div className="sticky top-[var(--header-h)] z-30 -mx-5 border-b border-line bg-white/95 px-5 py-3 backdrop-blur sm:-mx-8 sm:px-8 lg:hidden">
+      <div className="sticky top-[var(--header-h)] z-30 -mx-5 min-w-0 border-b border-line bg-white px-5 py-3 sm:-mx-8 sm:px-8 lg:hidden">
         <div className="flex items-center gap-2">
           <button
             type="button"
@@ -67,7 +67,18 @@ export function DocsSidebar({ sections }: { sections: SidebarSection[] }) {
           </button>
           <DocsSearch compact />
         </div>
-        <div id="docs-mobile-nav" hidden={!open} className="mt-3 max-h-[65vh] overflow-y-auto pb-2">
+        <div id="docs-mobile-nav" hidden={!open} className="mt-3 max-h-[65vh] overflow-y-auto overscroll-contain pb-2">
+          <Link
+            href="/docs"
+            onClick={() => setOpen(false)}
+            aria-current={pathname === "/docs" ? "page" : undefined}
+            className={cn(
+              "mb-5 block rounded-md px-2.5 py-1.5 text-[0.875rem]",
+              pathname === "/docs" ? "bg-brand-50 font-medium text-brand-800" : "text-ink-600",
+            )}
+          >
+            Accueil de la documentation
+          </Link>
           <SidebarLinks sections={sections} pathname={pathname} onNavigate={() => setOpen(false)} />
         </div>
       </div>

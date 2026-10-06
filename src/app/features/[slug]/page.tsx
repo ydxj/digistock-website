@@ -118,7 +118,7 @@ export default async function FeaturePage({ params }: PageProps<"/features/[slug
       )}
 
       <section aria-labelledby="feature-faq" className="container-wide py-16 md:py-24">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-20">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-20">
           <div>
             <h2 id="feature-faq" className="text-[1.5rem] font-semibold tracking-[-0.02em] text-ink-950 sm:text-[1.75rem]">
               Questions fréquentes

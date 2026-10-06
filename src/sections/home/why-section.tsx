@@ -44,7 +44,7 @@ export function WhySection() {
   return (
     <Section labelledBy="why-title">
       <Container wide>
-        <div className="grid gap-14 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-20">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-14 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-20">
           <div>
             <SectionHeader
               id="why-title"

@@ -74,7 +74,7 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
           </div>
         </header>
 
-        <div className="container-site grid gap-12 py-14 md:py-16 lg:grid-cols-[minmax(0,1fr)_14rem] lg:gap-16">
+        <div className="container-site grid grid-cols-[minmax(0,1fr)] gap-12 py-14 md:py-16 lg:grid-cols-[minmax(0,1fr)_14rem] lg:gap-16">
           <div className="prose min-w-0 max-w-[42rem]">
             <Content />
           </div>

@@ -24,7 +24,7 @@ export function PosSection() {
   return (
     <Section labelledBy="pos-title">
       <Container wide>
-        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,34rem)] lg:gap-16">
+        <div className="grid grid-cols-[minmax(0,1fr)] items-center gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,34rem)] lg:gap-16">
           <div>
             <SectionHeader
               id="pos-title"

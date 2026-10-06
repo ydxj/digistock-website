@@ -25,7 +25,7 @@ export function FinalCTA({
             aria-hidden
             className="absolute -top-32 -right-24 size-[28rem] rounded-full bg-[radial-gradient(closest-side,rgb(59_118_242/0.35),transparent)]"
           />
-          <div className="relative grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_auto]">
+          <div className="relative grid grid-cols-[minmax(0,1fr)] items-center gap-10 lg:grid-cols-[minmax(0,1fr)_auto]">
             <div className="max-w-2xl">
               <h2
                 id={`${location}-title`}

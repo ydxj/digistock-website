@@ -124,7 +124,7 @@ export default function PricingPage() {
       </section>
 
       <section aria-labelledby="pricing-faq" className="container-site py-16 md:py-24">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-20">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-20">
           <h2 id="pricing-faq" className="text-[1.5rem] font-semibold tracking-[-0.02em] text-ink-950 sm:text-[1.75rem]">
             Questions sur les offres
           </h2>

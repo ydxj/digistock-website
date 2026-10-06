@@ -8,7 +8,7 @@ export function FaqSection() {
   return (
     <Section tone="subtle" bordered labelledBy="faq-title">
       <Container wide>
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-20">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-20">
           <div>
             <SectionHeader id="faq-title" eyebrow="FAQ" title="Questions fréquentes" />
             <p className="mt-5 text-[1rem] leading-relaxed text-ink-500">

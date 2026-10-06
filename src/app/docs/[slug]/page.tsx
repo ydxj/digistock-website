@@ -37,7 +37,7 @@ export default async function DocPage({ params }: PageProps<"/docs/[slug]">) {
   const path = `/docs/${slug}`;
 
   return (
-    <div className="grid gap-12 py-10 lg:py-12 xl:grid-cols-[minmax(0,1fr)_13rem]">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-12 py-10 lg:py-12 xl:grid-cols-[minmax(0,1fr)_13rem]">
       <article className="min-w-0 max-w-[46rem]">
         <Breadcrumbs
           items={[

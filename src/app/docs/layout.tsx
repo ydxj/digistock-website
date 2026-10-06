@@ -11,7 +11,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <div className="border-t border-line">
-      <div className="container-wide grid lg:grid-cols-[15.5rem_minmax(0,1fr)] lg:gap-10 xl:gap-14">
+      <div className="container-wide grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[15.5rem_minmax(0,1fr)] lg:gap-10 xl:gap-14">
         <DocsSidebar sections={sections} />
         <div className="min-w-0 lg:border-l lg:border-line lg:pl-10 xl:pl-14">{children}</div>
       </div>

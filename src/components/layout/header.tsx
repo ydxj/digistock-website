@@ -29,6 +29,14 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Ferme le menu si l'écran passe en mode bureau
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const onChange = () => mq.matches && setOpen(false);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
   // Ferme le menu lors d'un changement de page
   const [lastPath, setLastPath] = useState(pathname);
   if (pathname !== lastPath) {
@@ -73,63 +81,71 @@ export function Header() {
   const desktopNav = mainNav.filter((item) => item.href !== "/");
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 h-[var(--header-h)] border-b transition-[background-color,border-color,box-shadow] duration-200",
-        scrolled || open
-          ? "border-line bg-white/90 shadow-[0_1px_12px_-6px_rgb(7_17_38/0.12)] backdrop-blur-md supports-[backdrop-filter]:bg-white/80"
-          : "border-transparent bg-white",
-      )}
-    >
-      <div className="container-wide flex h-full items-center justify-between gap-6">
-        <Logo preload />
+    <>
+      <header
+        className={cn(
+          "sticky top-0 z-50 h-[var(--header-h)] border-b transition-[background-color,border-color,box-shadow] duration-200",
+          open
+            ? "border-line bg-white"
+            : scrolled
+              ? "border-line bg-white/90 shadow-[0_1px_12px_-6px_rgb(7_17_38/0.12)] backdrop-blur-md supports-[backdrop-filter]:bg-white/80"
+              : "border-transparent bg-white",
+        )}
+      >
+        <div className="container-wide flex h-full items-center justify-between gap-6">
+          <Logo preload />
 
-        <nav aria-label="Navigation principale" className="hidden lg:block">
-          <ul className="flex items-center gap-0.5">
-            {desktopNav.map((item) => {
-              const active = isActive(pathname, item.href);
-              return (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    aria-current={active ? "page" : undefined}
-                    className={cn(
-                      "relative rounded-md px-3 py-2 text-[0.875rem] font-medium transition-colors",
-                      active ? "text-ink-950" : "text-ink-600 hover:text-ink-950",
-                    )}
-                  >
-                    {item.label}
-                    {active && (
-                      <span aria-hidden className="absolute inset-x-3 -bottom-[13px] h-[2px] rounded-full bg-brand-600" />
-                    )}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
+          <nav aria-label="Navigation principale" className="hidden lg:block">
+            <ul className="flex items-center gap-0.5">
+              {desktopNav.map((item) => {
+                const active = isActive(pathname, item.href);
+                return (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      aria-current={active ? "page" : undefined}
+                      className={cn(
+                        "relative rounded-md px-3 py-2 text-[0.875rem] font-medium transition-colors",
+                        active ? "text-ink-950" : "text-ink-600 hover:text-ink-950",
+                      )}
+                    >
+                      {item.label}
+                      {active && (
+                        <span aria-hidden className="absolute inset-x-3 -bottom-[13px] h-[2px] rounded-full bg-brand-600" />
+                      )}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
 
-        <div className="flex items-center gap-2">
-          <DownloadButton location="header" size="sm" label="Télécharger DigiStock" className="hidden sm:inline-flex" />
-          <button
-            ref={toggleRef}
-            type="button"
-            className="inline-flex size-10 items-center justify-center rounded-md text-ink-800 transition-colors hover:bg-ink-100 lg:hidden"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X className="size-5" aria-hidden /> : <Menu className="size-5" aria-hidden />}
-          </button>
+          <div className="flex items-center gap-2">
+            <div className="hidden sm:block">
+              <DownloadButton location="header" size="sm" label="Télécharger DigiStock" />
+            </div>
+            <button
+              ref={toggleRef}
+              type="button"
+              className="inline-flex size-10 items-center justify-center rounded-md text-ink-800 transition-colors hover:bg-ink-100 lg:hidden"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+              onClick={() => setOpen((v) => !v)}
+            >
+              {open ? <X className="size-5" aria-hidden /> : <Menu className="size-5" aria-hidden />}
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
+      {/* Le panneau est hors du <header> : un parent avec backdrop-filter
+          deviendrait le bloc conteneur du `position: fixed` et l'écraserait. */}
       <div
         id="mobile-menu"
         ref={panelRef}
         hidden={!open}
-        className="fixed inset-x-0 top-[var(--header-h)] bottom-0 z-40 overflow-y-auto border-t border-line bg-white lg:hidden"
+        className="animate-fade fixed inset-x-0 top-[var(--header-h)] bottom-0 z-40 overflow-y-auto overscroll-contain bg-white lg:hidden"
       >
         <nav aria-label="Navigation mobile" className="container-wide flex min-h-full flex-col py-4">
           <ul className="divide-y divide-line">
@@ -159,6 +175,6 @@ export function Header() {
           </div>
         </nav>
       </div>
-    </header>
+    </>
   );
 }

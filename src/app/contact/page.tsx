@@ -38,7 +38,7 @@ export default function ContactPage() {
         title="Parlons de votre activité."
         intro="Une question sur DigiStock, l'offre Premium ou l'installation ? L'équipe DigiStudio vous répond."
       />
-      <section className="container-wide grid gap-14 py-16 md:py-24 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20">
+      <section className="container-wide grid grid-cols-[minmax(0,1fr)] gap-14 py-16 md:py-24 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20">
         <div>
           <h2 className="text-[1.25rem] font-semibold tracking-[-0.02em] text-ink-950">Nous joindre</h2>
           <ul className="mt-6 divide-y divide-line border-y border-line">

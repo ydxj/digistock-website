@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="border-t border-line bg-surface">
       <div className="container-wide pt-16 pb-10 md:pt-20">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_2fr] lg:gap-16">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-[1.3fr_2fr] lg:gap-16">
           <div className="max-w-sm">
             <Logo />
             <p className="mt-5 text-[0.9375rem] leading-relaxed text-ink-500">
