@@ -12,6 +12,17 @@ export type Release = {
 
 export const releases: Release[] = [
   {
+    version: "1.0.2",
+    date: "2026-10-06",
+    title: "Connexion WhatsApp plus sûre",
+    changes: [
+      {
+        type: "corrigé",
+        text: "WhatsApp se connecte désormais via WhatsApp Web, une méthode plus sûre et plus fiable pour envoyer factures, tickets et rappels.",
+      },
+    ],
+  },
+  {
     version: "1.0.0",
     date: "2026-10-05",
     title: "Première version publique",

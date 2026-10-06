@@ -45,7 +45,7 @@ Copiez `.env.example` en `.env.local` (local) ou renseignez-les dans Vercel.
 | Variable | Rôle |
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | **Obligatoire en production.** URL publique sans slash final, utilisée pour les canonicals, le sitemap, Open Graph et JSON-LD. À défaut : `VERCEL_PROJECT_PRODUCTION_URL`, puis `http://localhost:3000`. |
-| `NEXT_PUBLIC_DOWNLOAD_URL` | Optionnel. Remplace le lien de l'installateur défini dans `src/config/product.ts` (actuellement la release GitHub `DigiStock_1.0.0`). |
+| `NEXT_PUBLIC_DOWNLOAD_URL` | Optionnel. Remplace le lien de l'installateur défini dans `src/config/product.ts` (actuellement la release GitHub `DigiStock_1.0.2`). |
 | `NEXT_PUBLIC_GSC_VERIFICATION` | Code de vérification Google Search Console. |
 | `NEXT_PUBLIC_BING_VERIFICATION` | Code de vérification Bing Webmaster Tools. |
 | `NEXT_PUBLIC_VERCEL_ANALYTICS` | `1` pour activer Vercel Analytics. |

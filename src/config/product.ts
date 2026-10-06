@@ -8,9 +8,9 @@ export const product = {
   company: "DigiStudio",
   tagline: "La gestion de stock pensée pour votre entreprise.",
   /** Version affichée sur le site. Laisser vide pour la masquer. */
-  currentVersion: "1.0.0",
+  currentVersion: "1.0.2",
   /** Date de publication de la version (ISO, ex. "2026-10-01"). Laisser vide pour la masquer. */
-  releaseDate: "2026-10-05",
+  releaseDate: "2026-10-06",
   /**
    * URL de l'installateur Windows (GitHub Releases). NEXT_PUBLIC_DOWNLOAD_URL
    * la remplace si elle est définie. Si l'URL est vide, les boutons affichent
@@ -18,11 +18,11 @@ export const product = {
    */
   downloadUrl:
     process.env.NEXT_PUBLIC_DOWNLOAD_URL ||
-    "https://github.com/digistudio-dev/digistock/releases/download/DigiStock_1.0.0/DigiStock_1.0.0_x64-setup.exe",
+    "https://github.com/digistudio-dev/digistock/releases/download/DigiStock_1.0.2/DigiStock_1.0.2_x64-setup.exe",
   /** Nom du fichier téléchargé (affiché sur /telecharger). */
-  installerFileName: "DigiStock_1.0.0_x64-setup.exe",
+  installerFileName: "DigiStock_1.0.2_x64-setup.exe",
   /** Taille de l'installateur (ex. "92 Mo"). Laisser vide pour la masquer. */
-  installerSize: "27,5 Mo",
+  installerSize: "28,1 Mo",
   downloadFallback: {
     label: "Bientôt disponible",
     href: "/telecharger",

@@ -848,9 +848,9 @@ export const features: Feature[] = [
         ],
       },
       {
-        title: "Connecté localement, sous votre contrôle",
+        title: "Connecté via WhatsApp Web, sous votre contrôle",
         paragraphs: [
-          "WhatsApp est connecté localement à DigiStock sur votre ordinateur. DigiStock ne publie rien et n'envoie aucun message automatiquement : il prépare le contenu, vous le relisez, vous pouvez le modifier, et c'est vous qui validez l'envoi.",
+          "DigiStock se connecte à WhatsApp via WhatsApp Web, depuis votre ordinateur, comme lorsque vous liez un appareil à votre compte. DigiStock ne publie rien et n'envoie aucun message automatiquement : il prépare le contenu, vous le relisez, vous pouvez le modifier, et c'est vous qui validez l'envoi.",
           "Cette approche évite les mauvaises surprises : pas de relance envoyée par erreur à un bon client, pas de message parti au mauvais moment.",
         ],
       },
@@ -872,7 +872,7 @@ export const features: Feature[] = [
       },
       {
         question: "Comment WhatsApp est-il connecté ?",
-        answer: "WhatsApp est connecté localement depuis DigiStock sur votre ordinateur. La documentation détaille la procédure de connexion.",
+        answer: "DigiStock utilise WhatsApp Web : vous liez votre compte WhatsApp depuis votre ordinateur, comme un appareil connecté. La documentation détaille la procédure.",
       },
     ],
     related: ["credits-clients", "caisse", "fournisseurs", "clients"],

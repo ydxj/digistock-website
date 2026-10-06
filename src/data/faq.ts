@@ -63,7 +63,7 @@ export const faqGroups: FAQGroup[] = [
       {
         question: "Puis-je connecter WhatsApp ?",
         answer:
-          "Oui, avec DigiStock Premium. WhatsApp est connecté localement depuis DigiStock. Vous pouvez envoyer factures, tickets, rappels de paiement et commandes fournisseurs. Aucun message n'est envoyé sans votre validation.",
+          "Oui, avec DigiStock Premium. WhatsApp est connecté via WhatsApp Web, depuis votre ordinateur. Vous pouvez envoyer factures, tickets, rappels de paiement et commandes fournisseurs. Aucun message n'est envoyé sans votre validation.",
       },
       {
         question: "Puis-je importer mes produits depuis Excel ou CSV ?",

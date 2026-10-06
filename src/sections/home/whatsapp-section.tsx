@@ -36,8 +36,8 @@ export function WhatsAppSection() {
             <div className="mt-8 flex gap-3.5 rounded-xl border border-line bg-surface p-5">
               <ShieldCheck className="mt-0.5 size-5 shrink-0 text-ink-700" strokeWidth={1.75} aria-hidden />
               <p className="text-[0.9375rem] leading-relaxed text-ink-600">
-                <span className="font-medium text-ink-900">Vous gardez la main.</span> WhatsApp est connecté localement
-                via DigiStock. Aucun message n&apos;est envoyé automatiquement : vous validez toujours avant l&apos;envoi.
+                <span className="font-medium text-ink-900">Vous gardez la main.</span> WhatsApp est connecté via WhatsApp
+                Web, depuis votre ordinateur. Aucun message n&apos;est envoyé automatiquement : vous validez toujours avant l&apos;envoi.
               </p>
             </div>
             <ButtonLink href="/features/whatsapp" variant="secondary" className="mt-10">
